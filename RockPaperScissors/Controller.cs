@@ -12,7 +12,7 @@ namespace RockPaperScissors
         List<Interfaces.IPlayer> _PlayersList;
         static Controller()
         {
-
+            //empty constructor
         }
         private Controller()
         {

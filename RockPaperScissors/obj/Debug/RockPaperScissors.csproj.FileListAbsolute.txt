@@ -4,3 +4,6 @@ c:\users\bruger\documents\visual studio 2013\Projects\RockPaperScissors\RockPape
 c:\users\bruger\documents\visual studio 2013\Projects\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
 c:\users\bruger\documents\visual studio 2013\Projects\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
 c:\users\bruger\documents\visual studio 2013\Projects\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb

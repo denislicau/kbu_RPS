@@ -18,9 +18,9 @@ namespace RockPaperScissors
         public static void LoadRules()
         {
             int[][] rules = new int[3][];
-            rules[0] = new int[3] { 5, 6, 7};
-            rules[1] = new int[3] { 7, 5, 6 };
-            rules[2] = new int[3] { 6, 7, 5 };
+            rules[0] = new int[3] { TIE, LOSE, WIN};
+            rules[1] = new int[3] { WIN, TIE, LOSE };
+            rules[2] = new int[3] { LOSE, WIN, TIE };
             gameRules = rules;
         }
         

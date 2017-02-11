@@ -7,3 +7,6 @@ c:\users\bruger\documents\visual studio 2013\Projects\RockPaperScissors\RockPape
 C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
 C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
 C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\Users\Bruger\Source\Repos\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csprojResolveAssemblyReference.cache

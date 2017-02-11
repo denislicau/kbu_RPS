@@ -35,8 +35,8 @@ namespace RockPaperScissors
             foreach (Model.Player player in _PlayersList)
             {
                 Console.WriteLine(player.Name + ", choose: 1 - rocks, 2 - paper, 3 - scissors");
-                int answer = int.Parse(Console.ReadLine()) - 1;
-                Console.Clear();
+                int answer = Convert.ToInt32((Console.ReadKey(true).KeyChar.ToString())) - 1;
+               
                 player.MakeChoice(answer);
             }
             //logic

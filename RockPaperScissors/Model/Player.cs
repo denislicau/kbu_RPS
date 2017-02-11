@@ -14,6 +14,7 @@ namespace RockPaperScissors.Model
         }
         public string Name {get; set;}
         public int LastChoice { get; set; }
+        public int GameScore { get; set; }
         public void MakeChoice(int choice)
         {
             LastChoice = choice;

@@ -37,7 +37,7 @@ namespace RockPaperScissors
 
         public static void DoWork()
         {
-            Controller mainController = Controller.Instance;
+            GameController mainController = GameController.Instance;
             string stringAnswer = "";
             int answer = 0;
             do

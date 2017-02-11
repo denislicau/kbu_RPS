@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class Controller
+    public class GameController
     {
-        private static readonly Controller instance = new Controller();
+        private static readonly GameController instance = new GameController();
         List<Interfaces.IPlayer> _PlayersList;
-        static Controller()
+        static GameController()
         {
             //empty constructor
         }
-        private Controller()
+        private GameController()
         {
             //constructor
             _PlayersList = new List<Interfaces.IPlayer>();
         }
 
-        public static Controller Instance
+        public static GameController Instance
         {
             get
             {

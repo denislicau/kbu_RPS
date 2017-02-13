@@ -12,22 +12,24 @@ namespace RockPaperScissors
         public FileController()
         {
             FileLocation = AppDomain.CurrentDomain.BaseDirectory + "\\Players.txt";
+            System.IO.StreamWriter initFile = new System.IO.StreamWriter(FileLocation, true);
+            initFile.Close();
         }
 
-        public void AddPlayerToFile(Model.Player player){
+        public void AddPlayerToFile(string playerName){
             System.IO.StreamWriter stream = new System.IO.StreamWriter(FileLocation, true);
-            stream.WriteLine(player.Name);
+            stream.WriteLine(playerName);
             stream.Flush();
             stream.Close();
         }
 
-        public List<Model.Player> RetrievePlayersFromFile()
+        public List<string> RetrievePlayersFromFile()
         {
-            List<Model.Player> allPlayers = new List<Model.Player>();
+            List<string> allPlayers = new List<string>();
             string[] allPlayersRaw = System.IO.File.ReadAllLines(FileLocation);
             foreach (string player in allPlayersRaw)
             {
-                Model.Player newPlayer = new Model.Player(player);
+                allPlayers.Add(player);
             }
             return allPlayers;
         }

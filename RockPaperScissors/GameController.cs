@@ -28,110 +28,46 @@ namespace RockPaperScissors
             }
         }
 
-        public string StartGame()
+        
+        public void StartGame()
         {
-            string returnVariable = "";
-            Model.Player Winner;
-            foreach (Model.Player player in _PlayersList)
+            //play all games, based on the number of players
+            for (int i = 0; i < _PlayersList.Count; i++)
             {
-                Console.WriteLine(player.Name + ", choose: 1 - rocks, 2 - paper, 3 - scissors");
-                int answer = Convert.ToInt32((Console.ReadKey(true).KeyChar.ToString())) - 1;
-               
-                player.MakeChoice(answer);
-            }
-            //logic
+                for (int j = 0; j < _PlayersList.Count; j++)
+                {
+                    if (i<j)
+                    {
+                        Model.Game oneGame = new Model.Game(_PlayersList[i], _PlayersList[j]);
+                        oneGame.PlayGame();
 
-            int result = Constants.gameRules[_PlayersList[0].LastChoice][_PlayersList[1].LastChoice];
-            if (result ==Constants.TIE)
-            {
-                returnVariable = "It's a tie!";
+                        Console.WriteLine("The winner is: " + oneGame.GameWinner.Name);
+                    }
+                }
             }
-            else if (result == Constants.LOSE)
-            {
-                Winner = (Model.Player)_PlayersList[1];
-                returnVariable = Winner.Name + " wins. Congrats!";
-            }
-            else if (result == Constants.WIN)
-            {
-                Winner = (Model.Player)_PlayersList[0];
-                returnVariable = Winner.Name + " wins. Congrats!";
-            }
-            //logic
-            //if (_PlayersList[0].LastChoice == Constants.ROCK)
-            //{
-            //    if (_PlayersList[1].LastChoice == Constants.PAPER)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[1];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.SCISSOR)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[0];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.ROCK)
-            //    {
-            //        returnVariable = "It's a tie!";
-            //    }  
-            //}
-            //else if (_PlayersList[0].LastChoice == Constants.PAPER)
-            //{
-            //    if (_PlayersList[1].LastChoice == Constants.PAPER)
-            //    {
-            //        returnVariable = "It's a tie!";
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.SCISSOR)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[1];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.ROCK)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[0];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //}
-            //else if (_PlayersList[0].LastChoice == Constants.SCISSOR)
-            //{
-            //    if (_PlayersList[1].LastChoice == Constants.PAPER)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[0];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.SCISSOR)
-            //    {
-            //        returnVariable = "It's a tie!";
-                    
-            //    }
-            //    else if (_PlayersList[1].LastChoice == Constants.ROCK)
-            //    {
-            //        Winner = (Model.Player)_PlayersList[1];
-            //        returnVariable = Winner.Name + " wins. Congrats!";
-            //    }
-            //}
-            return returnVariable;
-
-            
         }
-        public void SetName(string Name)
-        {
-            CreatePlayer(Name);
-        }
-        private void CreatePlayer(string Name)
-        {
-            Model.Player player = new Model.Player(Name);
 
+        
+        public void AddPlayerToRuntimeList(Interfaces.IPlayer player)
+        {   
             _PlayersList.Add(player);
         }
 
-        public bool CanIPlay()
-        {
-            return (_PlayersList.Count == 2)? true: false;
-        }
-
+      
         public void ResetListOfPlayers()
         {
             _PlayersList.Clear();
+        }
+
+        public void WriteTournamentScoreBoard()
+        {
+            Console.WriteLine("                 SCORE BOARD:");
+            Console.WriteLine();
+            _PlayersList = _PlayersList.OrderByDescending(player => player.TournamentScore).ToList();
+            for (int i = 0; i < _PlayersList.Count; i++)
+            {
+                Console.WriteLine("     "+(i+1)+". "+_PlayersList[i].Name+"     "+_PlayersList[i].TournamentScore);
+            }
         }
     }
 }

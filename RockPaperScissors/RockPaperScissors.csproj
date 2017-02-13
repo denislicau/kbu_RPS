@@ -44,7 +44,10 @@
     <Compile Include="GameController.cs" />
     <Compile Include="FileController.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Model\Game.cs" />
+    <Compile Include="Model\PCPlayer.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Round.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

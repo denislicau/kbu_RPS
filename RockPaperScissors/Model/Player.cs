@@ -11,12 +11,16 @@ namespace RockPaperScissors.Model
         public Player(string Name)
         {
             this.Name = Name;
+            GameScore = 0;
+            TournamentScore = 0;
         }
         public string Name {get; set;}
         public int LastChoice { get; set; }
         public int GameScore { get; set; }
-        public void MakeChoice(int choice)
+        public int TournamentScore { get; set; }
+        public void MakeChoice()
         {
+            int choice = Convert.ToInt32((Console.ReadKey(true).KeyChar.ToString())) - 1;
             LastChoice = choice;
         }
     }

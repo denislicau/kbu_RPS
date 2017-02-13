@@ -11,6 +11,7 @@ namespace RockPaperScissors.Interfaces
         string Name { get; set; }
         int LastChoice { get; set; }
         int GameScore { get; set; }
-        void MakeChoice(int choice);
+        int TournamentScore { get; set; }
+        void MakeChoice();
     }
 }
